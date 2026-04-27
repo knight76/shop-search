@@ -18,8 +18,10 @@ function startPolling() {
   setInterval(async () => {
     try {
       pollCount++;
-      // 검색 요청 큐 확인
-      const response = await fetch(`${STREAMLIT_BRIDGE_URL}/queue`);
+      // 검색 요청 큐 확인 (캐시 방지)
+      const response = await fetch(`${STREAMLIT_BRIDGE_URL}/queue?t=${Date.now()}`, {
+        cache: 'no-store'
+      });
       const data = await response.json();
 
       console.log(`[Background] 🔄 Poll #${pollCount}:`, data);

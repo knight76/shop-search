@@ -72,3 +72,12 @@ JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProce
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Received error from client: Error: Unexpected RDP message received: {"from":"root","type":"addonListChanged"}
 Last extension reload: 18:07:19 GMT+0900 (Korean Standard Time)[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] 
 
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/background.js with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/background.js
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Changed: /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/background.js
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Last change detection: 18:08:49 GMT+0900 (Korean Standard Time)
+[/opt/homebrew/lib/node_modules/web-ext/lib/extension-runners/index.js][debug] Reloading add-on at /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Received error from client: Error: Unexpected RDP message received: {"from":"root","type":"addonListChanged"}
+Last extension reload: 18:08:49 GMT+0900 (Korean Standard Time)[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] 
+
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Received error from client: Error: Unexpected RDP message received: {"type":"descriptor-destroyed","from":"server1.conn0.webExtensionDescriptor20"}
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Received error from client: Error: Unexpected RDP message received: {"type":"descriptor-destroyed","from":"server1.conn0.webExtensionDescriptor21"}

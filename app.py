@@ -32,10 +32,20 @@ st.title("🛒 쿠팡 vs 네이버 가격비교")
 # Extension Bridge 초기화
 @st.cache_resource
 def get_extension_bridge():
-    """Extension Bridge 싱글톤"""
+    """Extension Bridge 싱글톤 - Streamlit 시작시 초기화"""
+    with open('/tmp/bridge_init.log', 'a') as f:
+        f.write("[DEBUG] get_extension_bridge() called via st.cache_resource\n")
+        f.flush()
     bridge = ExtensionBridge(port=8765)
     bridge.start()
+    with open('/tmp/bridge_init.log', 'a') as f:
+        f.write("[DEBUG] Bridge started successfully\n")
+        f.flush()
     return bridge
+
+
+# 모듈 로드시 즉시 브릿지 초기화
+get_extension_bridge()
 
 
 def search_coupang_via_extension(keyword: str, limit: int):
@@ -55,6 +65,9 @@ def search_naver_cached(keyword: str, limit: int, sort: str = "sim"):
 # 메인 로직
 def main():
     """메인 컨트롤러"""
+    # Extension Bridge 초기화 (Firefox 확장이 앱 시작시 즉시 polling 시작)
+    get_extension_bridge()
+
     # 검색 히스토리 초기화
     if 'history_manager' not in st.session_state:
         st.session_state.history_manager = SearchHistory(max_items=15)
@@ -156,5 +169,5 @@ def main():
                 render_error(f"네이버 에러: {e}")
 
 
-if __name__ == "__main__":
-    main()
+# Streamlit always runs the module, so call main() unconditionally
+main()

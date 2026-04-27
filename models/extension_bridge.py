@@ -46,7 +46,8 @@ class ExtensionBridgeHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         """GET 요청 처리 (검색 요청 큐 확인)"""
-        path = self.path
+        # 쿼리 파라미터 제거 (캐시 방지용 ?t=timestamp 등)
+        path = self.path.split('?')[0]
 
         if path == '/queue':
             # 큐에서 요청 가져오기
@@ -95,21 +96,36 @@ class ExtensionBridge:
 
     def start(self, callback: Optional[Callable] = None):
         """서버 시작"""
+        import sys
+        sys.stderr.write(f"[DEBUG] ExtensionBridge.start() called, port={self.port}\n")
+        sys.stderr.flush()
         if self.server:
+            sys.stderr.write(f"[DEBUG] Server already running\n")
+            sys.stderr.flush()
             return
 
         ExtensionBridgeHandler.callback = callback
 
         try:
+            sys.stderr.write(f"[DEBUG] Creating HTTPServer on port {self.port}...\n")
+            sys.stderr.flush()
             self.server = HTTPServer(('localhost', self.port), ExtensionBridgeHandler)
             self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
             self.thread.start()
+            sys.stderr.write(f"[DEBUG] ✅ Extension bridge started on port {self.port}\n")
+            sys.stderr.flush()
             logger.info(f"Extension bridge started on port {self.port}")
         except OSError as e:
+            sys.stderr.write(f"[DEBUG] ❌ OSError: {e}\n")
+            sys.stderr.flush()
             if "Address already in use" in str(e):
                 logger.warning(f"Port {self.port} already in use")
             else:
                 raise
+        except Exception as e:
+            sys.stderr.write(f"[DEBUG] ❌ Unexpected error: {e}\n")
+            sys.stderr.flush()
+            raise
 
     def stop(self):
         """서버 중지"""
