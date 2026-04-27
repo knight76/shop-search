@@ -1,0 +1,21 @@
+#!/bin/bash
+
+PLUGIN_DIR="/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin"
+
+echo "🦊 Firefox 확장 프로그램 설치 방법"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "1. Firefox를 열고 주소창에 다음을 입력:"
+echo "   about:debugging#/runtime/this-firefox"
+echo ""
+echo "2. '임시 확장 기능 로드...' 버튼 클릭"
+echo ""
+echo "3. 다음 파일 선택:"
+echo "   $PLUGIN_DIR/manifest.json"
+echo ""
+echo "4. 확장 프로그램 아이콘을 클릭해서 테스트!"
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "또는 다음 명령으로 Firefox를 열어서 직접 진행:"
+echo "open -a Firefox 'about:debugging#/runtime/this-firefox'"

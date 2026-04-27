@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "쿠팡 vs 네이버 가격비교",
+  "version": "1.1.0",
+  "description": "쿠팡과 네이버 쇼핑 가격을 한눈에 비교",
+
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "https://www.coupang.com/*",
+    "https://openapi.naver.com/*"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/icon-48.png",
+    "default_title": "가격비교",
+    "default_popup": "popup/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.coupang.com/np/search*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
