@@ -14,7 +14,8 @@
     "activeTab",
     "storage",
     "https://www.coupang.com/*",
-    "https://openapi.naver.com/*"
+    "https://openapi.naver.com/*",
+    "http://localhost:8765/*"
   ],
 
   "browser_action": {
@@ -33,6 +34,6 @@
 
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   }
 }

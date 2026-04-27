@@ -52,3 +52,24 @@
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 17:49:33.572 firefox[75777:875835] +[IMKClient subclass]: chose IMKClient_Modern
 2026-04-27 17:49:33.572 firefox[75777:875835] +[IMKInputSession subclass]: chose IMKInputSession_Modern
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: [WARN  glean_core] Shutdown called before Glean is initialized. Waiting.
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Changed: /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Last change detection: 17:53:34 GMT+0900 (Korean Standard Time)
+[/opt/homebrew/lib/node_modules/web-ext/lib/extension-runners/index.js][debug] Reloading add-on at /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Received error from client: Error: Unexpected RDP message received: {"from":"root","type":"addonListChanged"}
+Last extension reload: 17:53:35 GMT+0900 (Korean Standard Time)[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] 
+
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Changed: /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Last change detection: 17:53:49 GMT+0900 (Korean Standard Time)
+[/opt/homebrew/lib/node_modules/web-ext/lib/extension-runners/index.js][debug] Reloading add-on at /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Received error from client: Error: Unexpected RDP message received: {"from":"root","type":"addonListChanged"}
+Last extension reload: 17:53:50 GMT+0900 (Korean Standard Time)[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] 
+
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/QSr7brS9/DFBxSQ/CS/AwRkQhAmERAg?v=8ce8eb87-8c12-efe8-6312-273aa983173b&t=668831494, line 1: unreachable code after return statement
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: unreachable code after return statement
+JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: unreachable code after return statement
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
