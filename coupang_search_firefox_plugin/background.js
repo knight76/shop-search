@@ -2,6 +2,9 @@
 let NAVER_CLIENT_ID = '';
 let NAVER_CLIENT_SECRET = '';
 
+// Streamlit 브릿지 설정
+const STREAMLIT_BRIDGE_URL = 'http://localhost:8765';
+
 // 설정 로드
 browser.storage.local.get(['naverClientId', 'naverClientSecret']).then(result => {
   NAVER_CLIENT_ID = result.naverClientId || '';
@@ -16,7 +19,32 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     });
     return true; // 비동기 응답
   }
+
+  if (message.type === 'COUPANG_RESULTS') {
+    // 쿠팡 검색 결과를 Streamlit으로 전송
+    sendResultsToStreamlit(message.keyword, message.items);
+  }
 });
+
+// Streamlit으로 결과 전송
+async function sendResultsToStreamlit(keyword, items) {
+  try {
+    await fetch(STREAMLIT_BRIDGE_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: 'SEARCH_RESULT',
+        keyword: keyword,
+        items: items
+      })
+    });
+    console.log('[Background] Sent results to Streamlit:', items.length, 'items');
+  } catch (error) {
+    console.error('[Background] Failed to send to Streamlit:', error);
+  }
+}
 
 async function searchNaver(keyword) {
   // 환경변수나 storage에서 API 키 가져오기

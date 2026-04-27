@@ -1,5 +1,53 @@
 """Streamlit UI 컴포넌트"""
 import streamlit as st
+from typing import Optional
+
+
+def render_search_history(history_manager, current_keyword: str = "") -> Optional[str]:
+    """
+    검색 히스토리 렌더링
+
+    Args:
+        history_manager: SearchHistory 인스턴스
+        current_keyword: 현재 검색어
+
+    Returns:
+        클릭된 검색어 또는 None
+    """
+    st.markdown("### 📜 검색 기록")
+
+    history = history_manager.get_all()
+
+    if not history:
+        st.caption("검색 기록이 없습니다")
+        return None
+
+    # 전체 삭제 버튼
+    if st.button("🗑️ 전체 삭제", key="clear_all_history"):
+        history_manager.clear()
+        st.rerun()
+
+    st.divider()
+
+    # 히스토리 목록
+    selected_keyword = None
+    for i, keyword in enumerate(history):
+        col1, col2 = st.columns([4, 1])
+
+        with col1:
+            # 현재 검색어면 하이라이트
+            if keyword == current_keyword:
+                st.markdown(f"**🔍 {keyword}**")
+            else:
+                if st.button(keyword, key=f"history_{i}", use_container_width=True):
+                    selected_keyword = keyword
+
+        with col2:
+            if st.button("×", key=f"delete_{i}"):
+                history_manager.remove(keyword)
+                st.rerun()
+
+    return selected_keyword
 
 
 def render_sidebar(limit: int = 20) -> int:
@@ -33,19 +81,6 @@ def render_sidebar(limit: int = 20) -> int:
     return limit
 
 
-def render_search_input() -> str | None:
-    """
-    검색 입력창 렌더링
-
-    Returns:
-        검색어 또는 None
-    """
-    keyword = st.text_input(
-        "검색어",
-        placeholder="예: 갤럭시버즈3 프로",
-        help="Enter 누르면 검색됩니다",
-    )
-    return keyword if keyword else None
 
 
 def render_items(items: list[dict], empty_msg: str = "결과 없음"):
