@@ -1,0 +1,54 @@
+[/opt/homebrew/lib/node_modules/web-ext/lib/program.js][info] Version:
+[/opt/homebrew/lib/node_modules/web-ext/lib/program.js][debug] Discovering config files. Set --no-config-discovery to disable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/.web-ext-config.mjs" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/.web-ext-config.cjs" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/.web-ext-config.js" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/package.json" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-config.mjs" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-config.cjs" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext-config.mjs" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-config.js" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext-config.cjs" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext-config.js" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/cmd/run.js][info] Running web extension from /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/manifest.js][debug] Validating manifest at /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
+[/opt/homebrew/lib/node_modules/web-ext/lib/extension-runners/firefox-desktop.js][debug] Creating new Firefox profile
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Running Firefox with profile at /var/folders/89/_xq6nhls76s1b9bb3bn55s640000gn/T/firefox-profile33AlC2/
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Executing Firefox binary: /Applications/Firefox.app/Contents/MacOS/firefox
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox args: -start-debugger-server 58670 -foreground -no-remote -profile /var/folders/89/_xq6nhls76s1b9bb3bn55s640000gn/T/firefox-profile33AlC2/
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][info] Use --verbose or --devtools to see logging
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to the remote Firefox debugger
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (0); connection error: Error: connect ECONNREFUSED 127.0.0.1:58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (1); connection error: Error: connect ECONNREFUSED 127.0.0.1:58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 08:49:29.933 Firefox GPU Helper[75802:875971] Failure on line 687 in function id scheduleApplicationNotification(LSNotificationCode, NSWorkspaceNotificationCenter *): noErr == _LSModifyNotification(notificationID, 1, &code, 0, NULL, NULL, NULL)
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (2); connection error: Error: connect ECONNREFUSED 127.0.0.1:58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stdout: Started devtools server on 58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 08:49:30.041 Firefox GPU Helper[75802:875999] Connection Invalid error for service com.apple.hiservices-xpcservice.
+2026-04-27 08:49:30.041 Firefox GPU Helper[75802:875971] Error received in message reply handler: Connection invalid
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (3); connection error: Error: connect ECONNREFUSED 127.0.0.1:58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connected to the remote Firefox debugger on port 58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] installTemporaryAddon: {"addon":{"id":"3ae3989373692079ec8781a624652d7b1f5c990c@temporary-addon","actor":false},"from":"server1.conn0.addonsActor2"}
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][info] Installed /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin as a temporary add-on
+[/opt/homebrew/lib/node_modules/web-ext/lib/cmd/run.js][info] The extension will reload if any source file changes
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path **/*.xpi with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/**/*.xpi
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path **/*.zip with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/**/*.zip
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path **/.* with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/**/.*
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path **/.*/**/* with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/**/.*/**/*
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path **/node_modules with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/**/node_modules
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path **/node_modules/**/* with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/**/node_modules/**/*
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Ignoring artifacts directory "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-artifacts" and all its subdirectories
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-artifacts with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-artifacts
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-artifacts/**/* with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-artifacts/**/*
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Watching /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin for changes
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext.log with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext.log
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] FileFilter: ignoring file /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext.log
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Ignoring change to: /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext.log
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 17:49:33.572 firefox[75777:875835] +[IMKClient subclass]: chose IMKClient_Modern
+2026-04-27 17:49:33.572 firefox[75777:875835] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: [WARN  glean_core] Shutdown called before Glean is initialized. Waiting.
