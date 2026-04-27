@@ -4,36 +4,36 @@
 [/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/.web-ext-config.cjs" does not exist or is not readable
 [/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/.web-ext-config.js" does not exist or is not readable
 [/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/package.json" does not exist or is not readable
-[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-config.mjs" does not exist or is not readable
 [/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-config.cjs" does not exist or is not readable
-[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext-config.mjs" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-config.mjs" does not exist or is not readable
 [/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/web-ext-config.js" does not exist or is not readable
+[/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext-config.mjs" does not exist or is not readable
 [/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext-config.cjs" does not exist or is not readable
 [/opt/homebrew/lib/node_modules/web-ext/lib/config.js][debug] Discovered config "/Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext-config.js" does not exist or is not readable
 [/opt/homebrew/lib/node_modules/web-ext/lib/cmd/run.js][info] Running web extension from /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin
 [/opt/homebrew/lib/node_modules/web-ext/lib/util/manifest.js][debug] Validating manifest at /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
 [/opt/homebrew/lib/node_modules/web-ext/lib/extension-runners/firefox-desktop.js][debug] Creating new Firefox profile
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Running Firefox with profile at /var/folders/89/_xq6nhls76s1b9bb3bn55s640000gn/T/firefox-profile33AlC2/
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Running Firefox with profile at /var/folders/89/_xq6nhls76s1b9bb3bn55s640000gn/T/firefox-profileC54FFE/
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Executing Firefox binary: /Applications/Firefox.app/Contents/MacOS/firefox
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox args: -start-debugger-server 58670 -foreground -no-remote -profile /var/folders/89/_xq6nhls76s1b9bb3bn55s640000gn/T/firefox-profile33AlC2/
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox args: -start-debugger-server 60984 -foreground -no-remote -profile /var/folders/89/_xq6nhls76s1b9bb3bn55s640000gn/T/firefox-profileC54FFE/
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][info] Use --verbose or --devtools to see logging
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to the remote Firefox debugger
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (0); connection error: Error: connect ECONNREFUSED 127.0.0.1:58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (1); connection error: Error: connect ECONNREFUSED 127.0.0.1:58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 08:49:29.933 Firefox GPU Helper[75802:875971] Failure on line 687 in function id scheduleApplicationNotification(LSNotificationCode, NSWorkspaceNotificationCenter *): noErr == _LSModifyNotification(notificationID, 1, &code, 0, NULL, NULL, NULL)
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (2); connection error: Error: connect ECONNREFUSED 127.0.0.1:58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stdout: Started devtools server on 58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 08:49:30.041 Firefox GPU Helper[75802:875999] Connection Invalid error for service com.apple.hiservices-xpcservice.
-2026-04-27 08:49:30.041 Firefox GPU Helper[75802:875971] Error received in message reply handler: Connection invalid
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (3); connection error: Error: connect ECONNREFUSED 127.0.0.1:58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 58670
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connected to the remote Firefox debugger on port 58670
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (0); connection error: Error: connect ECONNREFUSED 127.0.0.1:60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (1); connection error: Error: connect ECONNREFUSED 127.0.0.1:60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (2); connection error: Error: connect ECONNREFUSED 127.0.0.1:60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 09:01:55.631 Firefox GPU Helper[83029:922640] Failure on line 687 in function id scheduleApplicationNotification(LSNotificationCode, NSWorkspaceNotificationCenter *): noErr == _LSModifyNotification(notificationID, 1, &code, 0, NULL, NULL, NULL)
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stdout: Started devtools server on 60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 09:01:55.699 Firefox GPU Helper[83029:922640] Error received in message reply handler: Connection invalid
+2026-04-27 09:01:55.699 Firefox GPU Helper[83029:922653] Connection Invalid error for service com.apple.hiservices-xpcservice.
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Retrying Firefox (3); connection error: Error: connect ECONNREFUSED 127.0.0.1:60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connecting to Firefox on port 60984
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Connected to the remote Firefox debugger on port 60984
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] installTemporaryAddon: {"addon":{"id":"3ae3989373692079ec8781a624652d7b1f5c990c@temporary-addon","actor":false},"from":"server1.conn0.addonsActor2"}
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] installTemporaryAddon: {"addon":{"id":"7a5188544a36cb4c74f2d1878d1d7ebb1d8c0884@temporary-addon","actor":false},"from":"server1.conn0.addonsActor2"}
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][info] Installed /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin as a temporary add-on
 [/opt/homebrew/lib/node_modules/web-ext/lib/cmd/run.js][info] The extension will reload if any source file changes
 [/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path **/*.xpi with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/**/*.xpi
@@ -49,27 +49,26 @@
 [/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext.log with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext.log
 [/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] FileFilter: ignoring file /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext.log
 [/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Ignoring change to: /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/.web-ext.log
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 17:49:33.572 firefox[75777:875835] +[IMKClient subclass]: chose IMKClient_Modern
-2026-04-27 17:49:33.572 firefox[75777:875835] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 18:02:01.781 firefox[83026:922541] +[IMKClient subclass]: chose IMKClient_Modern
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 18:02:01.781 firefox[83026:922541] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: 2026-04-27 18:02:14.811 firefox[83026:922541] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: [WARN  glean_core] Shutdown called before Glean is initialized. Waiting.
-[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
-[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Changed: /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
-[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Last change detection: 17:53:34 GMT+0900 (Korean Standard Time)
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/background.js with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/background.js
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Changed: /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/background.js
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Last change detection: 18:04:20 GMT+0900 (Korean Standard Time)
 [/opt/homebrew/lib/node_modules/web-ext/lib/extension-runners/index.js][debug] Reloading add-on at /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Received error from client: Error: Unexpected RDP message received: {"from":"root","type":"addonListChanged"}
-Last extension reload: 17:53:35 GMT+0900 (Korean Standard Time)[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] 
+Last extension reload: 18:04:21 GMT+0900 (Korean Standard Time)[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] 
 
-[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
-[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Changed: /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/manifest.json
-[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Last change detection: 17:53:49 GMT+0900 (Korean Standard Time)
+[/opt/homebrew/lib/node_modules/web-ext/lib/util/file-filter.js][debug] Resolved path /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/background.js with sourceDir /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin to /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/background.js
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Changed: /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin/background.js
+[/opt/homebrew/lib/node_modules/web-ext/lib/watcher.js][debug] Last change detection: 18:07:18 GMT+0900 (Korean Standard Time)
 [/opt/homebrew/lib/node_modules/web-ext/lib/extension-runners/index.js][debug] Reloading add-on at /Users/samuel.kim/dev/my/shop-search/coupang_search_firefox_plugin
 [/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] Received error from client: Error: Unexpected RDP message received: {"from":"root","type":"addonListChanged"}
-Last extension reload: 17:53:50 GMT+0900 (Korean Standard Time)[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] 
+Last extension reload: 18:07:19 GMT+0900 (Korean Standard Time)[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/remote.js][debug] 
 
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/QSr7brS9/DFBxSQ/CS/AwRkQhAmERAg?v=8ce8eb87-8c12-efe8-6312-273aa983173b&t=668831494, line 1: unreachable code after return statement
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: unreachable code after return statement
-JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: unreachable code after return statement
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-[/opt/homebrew/lib/node_modules/web-ext/lib/firefox/index.js][debug] Firefox stderr: JavaScript warning: https://www.coupang.com/znxE30/8o5L/mdjc/4EbZ/s49zWf/u3r7brS9V1DawQ/UEZsSQ/b2/BIOVtzbCsB, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.

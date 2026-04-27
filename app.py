@@ -116,7 +116,7 @@ def main():
     # 쿠팡 검색 (Firefox 확장 프로그램 사용)
     with col_c:
         st.subheader("🅒 쿠팡 (via Firefox 확장)")
-        with st.spinner("Firefox 확장 프로그램으로 쿠팡 검색 중... (새 탭이 열립니다)"):
+        with st.spinner("Firefox 확장 프로그램으로 쿠팡 검색 중..."):
             try:
                 coupang_items = search_coupang_via_extension(keyword, limit)
 

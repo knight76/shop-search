@@ -6,22 +6,32 @@ let NAVER_CLIENT_SECRET = '';
 const STREAMLIT_BRIDGE_URL = 'http://localhost:8765';
 const POLL_INTERVAL = 2000; // 2초마다 polling
 
+console.log('[Background] 🚀 Background script loaded');
+
 // Polling 시작
 startPolling();
+console.log('[Background] ✅ Polling started');
 
 function startPolling() {
+  let pollCount = 0;
+
   setInterval(async () => {
     try {
+      pollCount++;
       // 검색 요청 큐 확인
       const response = await fetch(`${STREAMLIT_BRIDGE_URL}/queue`);
       const data = await response.json();
 
+      console.log(`[Background] 🔄 Poll #${pollCount}:`, data);
+      console.log(`[Background] 🔍 Checking type: "${data.type}" === "SEARCH_REQUEST"?`, data.type === 'SEARCH_REQUEST');
+
       if (data.type === 'SEARCH_REQUEST') {
-        console.log('[Background] New search request:', data.keyword);
+        console.log('[Background] 📥 New search request:', data.keyword);
+        alert(`🎯 Search detected: ${data.keyword}`); // 팝업으로 확인
         performSearch(data.keyword, data.limit || 20);
       }
     } catch (error) {
-      // Streamlit이 실행 중이 아니면 무시
+      console.error('[Background] ❌ Polling error:', error.message);
     }
   }, POLL_INTERVAL);
 }
@@ -29,10 +39,11 @@ function startPolling() {
 const activeTabs = {}; // 검색 중인 탭 추적
 
 async function performSearch(keyword, limit) {
-  console.log('[Background] Performing search:', keyword);
+  console.log('[Background] 🔍 Performing search:', keyword, 'limit:', limit);
 
   // 백그라운드 탭으로 쿠팡 검색 페이지 열기
   const url = `https://www.coupang.com/np/search?q=${encodeURIComponent(keyword)}&listSize=${limit}&channel=user`;
+  console.log('[Background] 🌐 Opening URL:', url);
 
   const tab = await browser.tabs.create({
     url: url,
@@ -41,7 +52,7 @@ async function performSearch(keyword, limit) {
 
   // 탭 ID 저장 (결과 수신 후 닫기 위해)
   activeTabs[keyword] = tab.id;
-  console.log('[Background] Created background tab:', tab.id);
+  console.log('[Background] ✅ Created background tab:', tab.id);
 }
 
 // 설정 로드
@@ -51,7 +62,11 @@ browser.storage.local.get(['naverClientId', 'naverClientSecret']).then(result =>
 });
 
 // 메시지 리스너
+console.log('[Background] 📡 Message listener registered');
+
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  console.log('[Background] 📨 Received message:', message.type);
+
   if (message.type === 'SEARCH_NAVER') {
     searchNaver(message.keyword).then(items => {
       sendResponse({ items });
@@ -60,6 +75,8 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === 'COUPANG_RESULTS') {
+    console.log('[Background] 📦 Coupang results received:', message.items?.length || 0, 'items');
+
     // 쿠팡 검색 결과를 Streamlit으로 전송
     sendResultsToStreamlit(message.keyword, message.items);
 
@@ -67,15 +84,17 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (activeTabs[message.keyword]) {
       browser.tabs.remove(activeTabs[message.keyword]);
       delete activeTabs[message.keyword];
-      console.log('[Background] Closed tab for:', message.keyword);
+      console.log('[Background] 🗑️ Closed tab for:', message.keyword);
     }
   }
 });
 
 // Streamlit으로 결과 전송
 async function sendResultsToStreamlit(keyword, items) {
+  console.log('[Background] 📤 Sending to Streamlit:', items?.length || 0, 'items');
+
   try {
-    await fetch(STREAMLIT_BRIDGE_URL, {
+    const response = await fetch(STREAMLIT_BRIDGE_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -86,9 +105,10 @@ async function sendResultsToStreamlit(keyword, items) {
         items: items
       })
     });
-    console.log('[Background] Sent results to Streamlit:', items.length, 'items');
+
+    console.log('[Background] ✅ Sent results to Streamlit:', items.length, 'items, status:', response.status);
   } catch (error) {
-    console.error('[Background] Failed to send to Streamlit:', error);
+    console.error('[Background] ❌ Failed to send to Streamlit:', error);
   }
 }
 
