@@ -14,6 +14,7 @@ class ExtensionBridgeHandler(BaseHTTPRequestHandler):
 
     callback: Optional[Callable] = None
     search_results = {}
+    search_queue = []  # 검색 요청 큐
 
     def do_POST(self):
         """POST 요청 처리"""
@@ -44,12 +45,32 @@ class ExtensionBridgeHandler(BaseHTTPRequestHandler):
             self.end_headers()
 
     def do_GET(self):
-        """GET 요청 처리 (상태 확인)"""
-        self.send_response(200)
-        self.send_header('Content-Type', 'application/json')
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.end_headers()
-        self.wfile.write(json.dumps({'status': 'running'}).encode())
+        """GET 요청 처리 (검색 요청 큐 확인)"""
+        path = self.path
+
+        if path == '/queue':
+            # 큐에서 요청 가져오기
+            if ExtensionBridgeHandler.search_queue:
+                request = ExtensionBridgeHandler.search_queue.pop(0)
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps(request).encode())
+            else:
+                # 큐가 비어있음
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({'status': 'empty'}).encode())
+        else:
+            # 상태 확인
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps({'status': 'running'}).encode())
 
     def do_OPTIONS(self):
         """CORS preflight"""
@@ -107,3 +128,12 @@ class ExtensionBridge:
             ExtensionBridgeHandler.search_results.pop(keyword, None)
         else:
             ExtensionBridgeHandler.search_results.clear()
+
+    def add_search_request(self, keyword: str, limit: int = 20):
+        """검색 요청 추가"""
+        ExtensionBridgeHandler.search_queue.append({
+            'type': 'SEARCH_REQUEST',
+            'keyword': keyword,
+            'limit': limit
+        })
+        logger.info(f"Added search request to queue: {keyword}")

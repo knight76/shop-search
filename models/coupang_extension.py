@@ -1,19 +1,18 @@
 """Firefox 확장 프로그램을 통한 쿠팡 검색"""
 import time
-import webbrowser
 from typing import Optional
 from .extension_bridge import ExtensionBridge
 
 
 class CoupangExtensionSearcher:
-    """Firefox 확장 프로그램을 통한 쿠팡 검색"""
+    """Firefox 확장 프로그램을 통한 쿠팡 검색 (백그라운드)"""
 
     def __init__(self, bridge: ExtensionBridge):
         self.bridge = bridge
 
     def search(self, keyword: str, limit: int = 20, timeout: int = 30) -> Optional[list]:
         """
-        Firefox 확장 프로그램으로 쿠팡 검색
+        Firefox 확장 프로그램으로 쿠팡 검색 (백그라운드)
 
         Args:
             keyword: 검색어
@@ -26,15 +25,8 @@ class CoupangExtensionSearcher:
         # 기존 결과 초기화
         self.bridge.clear_results(keyword)
 
-        # Firefox에서 쿠팡 검색 페이지 열기
-        # 확장 프로그램이 자동으로 검색 수행
-        url = f"https://www.coupang.com/np/search?q={keyword}&channel=user"
-
-        try:
-            webbrowser.get('firefox').open(url)
-        except Exception:
-            # Firefox가 기본 브라우저가 아닌 경우
-            webbrowser.open(url)
+        # 검색 요청을 큐에 추가 (Firefox 확장이 polling으로 확인)
+        self.bridge.add_search_request(keyword, limit)
 
         # 결과 대기
         start_time = time.time()

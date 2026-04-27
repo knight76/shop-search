@@ -16,13 +16,14 @@ class NaverSearcher:
         self.client_secret = client_secret or os.getenv("NAVER_CLIENT_SECRET")
         self.api_url = "https://openapi.naver.com/v1/search/shop.json"
 
-    def search(self, keyword: str, limit: int = 20) -> list[dict] | None:
+    def search(self, keyword: str, limit: int = 20, sort: str = "sim") -> list[dict] | None:
         """
         네이버 쇼핑 공식 검색 API
 
         Args:
             keyword: 검색어
             limit: 결과 개수
+            sort: 정렬 (sim=정확도, date=날짜, asc=낮은가격, dsc=높은가격)
 
         Returns:
             검색 결과 리스트 [{'name', 'price', 'link', 'mall', 'image'}]
@@ -34,7 +35,7 @@ class NaverSearcher:
         try:
             r = httpx.get(
                 self.api_url,
-                params={"query": keyword, "display": min(limit, 100), "sort": "asc"},
+                params={"query": keyword, "display": min(limit, 100), "sort": sort},
                 headers={
                     "X-Naver-Client-Id": self.client_id,
                     "X-Naver-Client-Secret": self.client_secret

@@ -46,10 +46,10 @@ def search_coupang_via_extension(keyword: str, limit: int):
 
 
 @st.cache_data(ttl=600, show_spinner=False)
-def search_naver_cached(keyword: str, limit: int):
+def search_naver_cached(keyword: str, limit: int, sort: str = "sim"):
     """네이버 검색 (캐시)"""
     searcher = NaverSearcher()
-    return searcher.search(keyword, limit)
+    return searcher.search(keyword, limit, sort)
 
 
 # 메인 로직
@@ -76,14 +76,13 @@ def main():
         st.divider()
 
         # 설정
-        limit = render_sidebar(limit=20)
+        limit, naver_sort = render_sidebar(limit=20, sort="sim")
 
     # 히스토리에서 선택한 검색어가 있으면 사용
     if selected_from_history:
         st.session_state.current_keyword = selected_from_history
-        # 검색어 입력창도 업데이트
-        if 'search_input' not in st.session_state:
-            st.session_state.search_input = selected_from_history
+        st.session_state.search_input = selected_from_history
+        st.rerun()  # 페이지 새로고침하여 검색 실행
 
     # 검색어 입력
     keyword = st.text_input(
@@ -141,7 +140,7 @@ def main():
         st.subheader("🅝 네이버")
         with st.spinner("네이버 검색 중..."):
             try:
-                naver_items = search_naver_cached(keyword, limit)
+                naver_items = search_naver_cached(keyword, limit, naver_sort)
 
                 if naver_items is None:
                     render_info(

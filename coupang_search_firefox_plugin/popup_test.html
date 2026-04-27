@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>쿠팡 스크랩 테스트</title>
+  <style>
+    body { padding: 20px; font-family: sans-serif; }
+    button { padding: 10px 20px; margin: 10px 0; }
+    #result { margin-top: 20px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h2>🧪 쿠팡 스크랩 테스트</h2>
+
+  <p>1. 쿠팡 검색 페이지를 먼저 열어두세요</p>
+  <p>2. 아래 버튼을 클릭하세요</p>
+
+  <button id="scrapBtn">현재 탭 스크랩하기</button>
+  <button id="sendBtn">Streamlit으로 전송</button>
+
+  <div id="result"></div>
+
+  <script>
+    const resultDiv = document.getElementById('result');
+    let scrapedItems = [];
+
+    document.getElementById('scrapBtn').addEventListener('click', async () => {
+      resultDiv.textContent = '스크랩 중...';
+
+      // 현재 활성 탭 가져오기
+      const tabs = await browser.tabs.query({active: true, currentWindow: true});
+      const tab = tabs[0];
+
+      if (!tab.url.includes('coupang.com')) {
+        resultDiv.textContent = '❌ 쿠팡 페이지가 아닙니다';
+        return;
+      }
+
+      // content script에 메시지 보내기
+      try {
+        const response = await browser.tabs.sendMessage(tab.id, {type: 'SCRAP_NOW'});
+        scrapedItems = response.items || [];
+        resultDiv.textContent = `✅ ${scrapedItems.length}개 상품 스크랩 완료!\n\n` +
+          JSON.stringify(scrapedItems.slice(0, 2), null, 2);
+      } catch (e) {
+        resultDiv.textContent = '❌ 에러: ' + e.message;
+      }
+    });
+
+    document.getElementById('sendBtn').addEventListener('click', async () => {
+      if (scrapedItems.length === 0) {
+        resultDiv.textContent = '먼저 스크랩하세요';
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:8765', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            type: 'SEARCH_RESULT',
+            keyword: '테스트',
+            items: scrapedItems
+          })
+        });
+
+        resultDiv.textContent = '✅ Streamlit으로 전송 완료!';
+      } catch (e) {
+        resultDiv.textContent = '❌ 전송 실패: ' + e.message;
+      }
+    });
+  </script>
+</body>
+</html>

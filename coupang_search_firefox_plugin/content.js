@@ -132,7 +132,47 @@
     });
   }
 
-  // 페이지 로드 후 실행
+  // 메시지 리스너 (수동 스크랩 요청)
+  browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.type === 'SCRAP_NOW') {
+      console.log('[Coupang Ext] Manual scrap requested');
+
+      // 즉시 스크랩 시도
+      const products = document.querySelectorAll('li.search-product');
+
+      if (products.length > 0) {
+        const items = [];
+        products.forEach((product, index) => {
+          if (index >= 10) return; // 최대 10개
+
+          const nameEl = product.querySelector('div.name');
+          const priceEl = product.querySelector('strong.price-value');
+          const linkEl = product.querySelector('a.search-product-link');
+
+          if (nameEl && priceEl && linkEl) {
+            try {
+              const price = parseInt(priceEl.textContent.trim().replace(/,/g, ''));
+              items.push({
+                name: nameEl.textContent.trim(),
+                price: price,
+                link: 'https://www.coupang.com' + linkEl.getAttribute('href'),
+                mall: '쿠팡'
+              });
+            } catch (e) {}
+          }
+        });
+
+        console.log('[Coupang Ext] Manual scrap result:', items.length, 'items');
+        sendResponse({items: items});
+      } else {
+        sendResponse({items: []});
+      }
+
+      return true;
+    }
+  });
+
+  // 페이지 로드 후 자동 실행
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', waitForProducts);
   } else {

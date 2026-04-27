@@ -50,19 +50,35 @@ def render_search_history(history_manager, current_keyword: str = "") -> Optiona
     return selected_keyword
 
 
-def render_sidebar(limit: int = 20) -> int:
+def render_sidebar(limit: int = 20, sort: str = "sim") -> tuple[int, str]:
     """
     사이드바 렌더링
 
     Args:
         limit: 기본 결과 개수
+        sort: 네이버 정렬 옵션
 
     Returns:
-        사용자가 선택한 결과 개수
+        (limit, sort) 튜플
     """
     with st.sidebar:
         st.header("⚙️ 설정")
         limit = st.slider("결과 개수 (각 사이트별)", 5, 50, limit, 5)
+
+        st.divider()
+        st.caption("🔢 네이버 정렬")
+        sort = st.selectbox(
+            "정렬 기준",
+            options=["sim", "date", "asc", "dsc"],
+            format_func=lambda x: {
+                "sim": "정확도순 (추천)",
+                "date": "날짜순",
+                "asc": "낮은가격순",
+                "dsc": "높은가격순"
+            }[x],
+            index=0,
+            label_visibility="collapsed"
+        )
 
         st.divider()
         st.caption("🔑 네이버 API 상태")
@@ -78,7 +94,7 @@ def render_sidebar(limit: int = 20) -> int:
             st.cache_data.clear()
             st.success("캐시 초기화 완료")
 
-    return limit
+    return limit, sort
 
 
 
